@@ -5,7 +5,7 @@ For reference
     https://twilio-python.readthedocs.org/en/latest/usage/validation.html
     http://www.twilio.com/docs/security
 
-To make fancier, put in middleware
+To make request validation fancier, put in django middleware.
 """
 from twilio.rest import TwilioRestClient
 from twilio.util import RequestValidator
@@ -41,7 +41,6 @@ class TwilioMessager(object):
                 settings.TWILIO_ACCOUNT_SID,
                 settings.TWILIO_AUTH_TOKEN
                 )
-        self.validator = RequestValidator(settings.TWILIO_AUTH_TOKEN)
 
     def send_message(self, to, message):
         try:
