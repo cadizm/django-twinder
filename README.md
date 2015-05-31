@@ -1,7 +1,7 @@
 Overview
 ========
 
-If you have a twilio number and want to receive sms's and response to them
+If you have a twilio number and want to receive sms's and responsd to them
 programmatically, here's an example django app to do just that via a twilio
 callback.
 
