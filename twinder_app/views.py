@@ -31,6 +31,8 @@ def sms(request):
 
     logger.debug('POST vars:\n{}'.format(pformat(dict(request.POST))))
 
-    send_twilio_message('+11234567890', request.POST['Body'])
+    message = 'From: {}\nBody: {}'.format(request.POST['From'], request.POST['Body'])
+
+    send_twilio_message('+11234567890', message)
 
     return TwilioResponse('http://www.youtube.com/watch?v=C-u5WLJ9Yk4')
